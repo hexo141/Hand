@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>双手指尖矩形</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <video id="video" playsinline muted></video>
+  <canvas id="overlay"></canvas>
+
+  <div id="panel">
+    <div class="row">
+      <button id="btn-toggle-cam">开启摄像头</button>
+      <span id="status">未启动</span>
+    </div>
+    <div class="row toggles">
+      <label><input type="checkbox" id="opt-mirror" checked /> 镜像</label>
+      <label><input type="checkbox" id="opt-labels" checked /> 标签</label>
+      <label><input type="checkbox" id="opt-debug" /> 调试</label>
+    </div>
+    <div class="row">
+      <span class="lab">填充</span>
+      <select id="opt-fillmode">
+        <option value="none">无</option>
+        <option value="solid" selected>纯色</option>
+        <option value="gradient">渐变</option>
+        <option value="glitch">故障</option>
+      </select>
+      <input type="color" id="opt-color" value="#00e5ff" title="颜色1" />
+      <input type="color" id="opt-color2" value="#ff3df1" title="颜色2(渐变)" class="hidden" />
+      <select id="opt-glitch" class="hidden" title="故障风格类型">
+        <option value="pixelate" selected>像素化</option>
+        <option value="tear">撕裂</option>
+        <option value="posterize">色块</option>
+      </select>
+    </div>
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
